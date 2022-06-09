@@ -1,0 +1,25 @@
+def createstack():
+    stack=[]
+    return stack
+def checkempty(stack):
+    return len(stack)==0
+def pushitem(stack,item):
+    stack.append(item)
+    print('push item:'+item)
+def pop(stack):
+    if checkempty(stack):
+        return "stack is empty"
+    return stack.pop()
+def reversestring(string):
+    n=len(string)
+    stack=createstack()
+    for i in range(0,n):
+        pushitem(stack,string[i])
+    string=" "
+    for i in range(0,n):
+        string+=pop(stack)
+    return string
+string="HIMA"
+string=reversestring(string)
+print("reverse string"+string)
+    
